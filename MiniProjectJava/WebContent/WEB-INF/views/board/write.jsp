@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <c:set var='root' value="${pageContext.request.contextPath }/"/>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +16,7 @@
 </head>
 <body>
 
+
 <c:import url="/WEB-INF/views/include/top_menu.jsp"/>
 
 <div class="container" style="margin-top:100px">
@@ -27,33 +25,25 @@
 		<div class="col-sm-6">
 			<div class="card shadow">
 				<div class="card-body">
-					<form action="${root }user/login" method="get">
-						<div class="form-group">
-							<label for="user_name">이름</label>
-							<input type="text" id="user_name" name="user_name" class="form-control"/>
+					<form action="${root }board/read" method="get">
+					<div class="form-group">
+						<label for="board_subject">제목</label>
+						<input type="text" id="board_subject" name="board_subject" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="board_content">내용</label>
+						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="board_file">첨부 이미지</label>
+						<input type="file" id="board_file" name="board_file" class="form-control" accept="image/*"/>
+					</div>
+					<div class="form-group">
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary">작성하기</button>
 						</div>
-						<div class="form-group">
-							<label for="user_id">아이디</label>
-							<div class="input-group">
-								<input type="text" id="user_id" name="user_id" class="form-control"/>
-								<div class="input-group-append">
-									<button type="button" class="btn btn-primary">중복확인</button>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="user_pw">비밀번호</label>
-							<input type="password" id="user_pw" name="user_pw" class="form-control"/>
-						</div>
-						<div class="form-group">
-							<label for="user_pw2">비밀번호 확인</label>
-							<input type="password" id="user_pw2" name="user_pw2" class="form-control"/>
-						</div>
-						<div class="form-group">
-							<div class="text-right">
-								<button type="submit" class="btn btn-primary">회원가입</button>
-							</div>
-						</div>
+					</div>
+					
 					</form>
 				</div>
 			</div>
@@ -66,11 +56,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
